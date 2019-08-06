@@ -1,0 +1,17 @@
+.myTitle {
+    text-align: center;
+    background-color: aquamarine;
+    padding: 2rem;
+}
+
+.butt {
+    margin-top: 1rem;
+}
+
+canvas {
+    margin-top: 1rem;
+    background-color: antiquewhite;
+    width: 75vw;
+    height: 75vh;
+    border: 5px solid darkslateblue;
+}
