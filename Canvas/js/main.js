@@ -1,8 +1,14 @@
 console.log("Hi, Testing Mode!")
-context = document.getElementById('canvas').getContext("2d");
 
+// Global Variables (Canvas)
+const canvas = document.getElementById('canvas');
+const context = canvas.getContext("2d");
+
+canvas.width = window.innerWidth * 0.75;
+canvas.height = window.innerHeight * 0.75;
+
+// IE Ccompatibility (Unused):
 /*
-// IE Ccompatibility:
 var canvasDiv = document.getElementById('canvasDiv');
 canvas = document.createElement('canvas');
 canvas.setAttribute('width', canvasWidth);
@@ -15,17 +21,20 @@ if(typeof G_vmlCanvasManager != 'undefined') {
 context = canvas.getContext("2d");
 */
 
+// Important Variables
 var clickX = new Array();
 var clickY = new Array();
 var clickDrag = new Array();
 var paint;
 
+// Arrays with Coordinates and Drawing
 function addClick(x, y, dragging){
   clickX.push(x);
   clickY.push(y);
   clickDrag.push(dragging);
 }
 
+// Re-Draw all the lines and dots for every new line or dot
 function redraw(){
     context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
     context.strokeStyle = "#df4b26";
@@ -44,6 +53,7 @@ function redraw(){
     }
 }
 
+// Clear Canvas
 function eraseDraw(){
     context.clearRect(0, 0, canvas.width, canvas.height);
     clickDrag = new Array();
@@ -52,8 +62,10 @@ function eraseDraw(){
     console.log("Erased");
 }
 
+// Button for Clear Canvas
 $('#clearButt').click(function(e){ eraseDraw(); });
 
+// When Holds Mouse's Click on the Canvas 
 $('#canvas').mousedown(function(e){
   var mouseX = e.pageX - this.offsetLeft;
   var mouseY = e.pageY - this.offsetTop;      
@@ -62,6 +74,7 @@ $('#canvas').mousedown(function(e){
   redraw();
 });
 
+// When the Mouse is moved on the Canvas
 $('#canvas').mousemove(function(e){
   if(paint){
     addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
@@ -69,5 +82,6 @@ $('#canvas').mousemove(function(e){
   }
 });
 
+// When releases Mouse's Click on the Canvas or the Mouse Leaves Canvas Zone
 $('#canvas').mouseup(function(e){ paint = false; });
 $('#canvas').mouseleave(function(e){ paint = false; });
