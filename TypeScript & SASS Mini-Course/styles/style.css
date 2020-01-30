@@ -1,0 +1,30 @@
+#principal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: gray;
+  width: 100%;
+}
+
+#principal button {
+  background-color: lightblue;
+}
+
+#principal button:hover {
+  background-color: violet;
+}
+
+#principal button::after {
+  content: "!";
+}
+/*# sourceMappingURL=style.css.map */
