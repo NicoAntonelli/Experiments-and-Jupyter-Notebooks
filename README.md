@@ -11,7 +11,7 @@ A little game of decoding an encrypted message. Challenge requested by an Argent
 Excercise extracted from my Genetic Algorithm's classes at UTN in 2019. I will improve it a bit in the future and rewrite it on a jupyter notebook. The Cantor Set is one of the most famous fractals.
 
 ## Pseudorandom Numbers Generator
-Multiplicative congruential method only, for the moment.
+Linear congruential generator (LGC) methods only, for the moment.
 
 ## Statistical Frecuency Functions
 I don't know. They're just some functions that I used once, because Numpy doesn't accept a "Frecuency Population" parameter for the calculation of mean, variance and standard deviation.
